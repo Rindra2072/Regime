@@ -69,6 +69,9 @@ class UserCI extends CI_Controller {
     		'user' => $this->input->post('user'),
     		'birthday' => $this->input->post('birthday'),
     		'email' => $this->input->post('email'),
+			'gender' =>$this->input->post('gender'),
+			'contact' =>$this->input->post('contact'),
+			'address' =>$this->input->post('address'),
     		'key_password' => $this->input->post('key_password'),
     		'user_status' => 1
 		);
