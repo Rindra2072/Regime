@@ -11,7 +11,7 @@ class Activites extends CI_Model {
 
     public function insert($data)
     {
-        $this->db->insert('Activity',$data);
+        $this->db->insert('Activity', $data);
         return $this->db->insert_id();
     }
 
@@ -20,8 +20,21 @@ class Activites extends CI_Model {
         return $query->result();
     }
     
-    public function delete(){
+    public function update()
+    {
+        $this->db->where('id', $id);
+        $this->db->update('Activity', $data);
+        return $this->db->affected_rows(); 
+    }
+
+    public function delete()
+    {
         $this->db->empty_table('Activity');
         return $this->db->affected_rows();    
+    }
+
+    public function get_All_Activities_Regime()
+    {
+        
     }
 }
