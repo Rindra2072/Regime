@@ -16,12 +16,15 @@ class User extends CI_Model {
         return $query->result();
     }
 
-    // find all not confirmed user
-    public function get_All_User_not_confirmed(){
-        $query = $this->db->get('User_not_confirmed');
-        return $query->result();
+	// is on Regime
+	public function is_On_Regime($user){
+        $query = $this->db->get_where('Regime_User',array('id_User'=>$user));
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
 
     // login User
     public function login_User($email,$password){
@@ -50,5 +53,34 @@ class User extends CI_Model {
         return $this->db->insert_id();
     }
 
+
+	// add size and weight
+	public function update_data($id, $data)
+	{
+    	$this->db->where('id', $id);
+    	$this->db->update('User', $data);
+    	return $this->db->affected_rows();
+	}
+
+
+	// profile completed
+	public function profile($user)
+	{
+        $query = $this->db->get_where('User',array('id'=>$user));
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+	public function get_By_id($user)
+	{
+        $query = $this->db->get_where('User',array('id'=>$user));
+        if ($query->num_rows() > 0) {
+            return $query->row();
+        } else {
+            return null;
+        }
+    }
 
 }
