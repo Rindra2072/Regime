@@ -14,6 +14,7 @@ CREATE TABLE Objective(
 	description VARCHAR(255)
 );
 
+
 INSERT INTO Objective VALUE(null,'Augmenter');
 INSERT INTO Objective VALUE(null,'Diminuer');
 
