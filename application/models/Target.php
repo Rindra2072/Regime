@@ -30,5 +30,10 @@ class Target extends CI_Model {
         $this->db->insert('Regime_User',$data);
         return $this->db->insert_id();
     }
+	//   public function insert_Regime_User($iduser,$idregime,$weight,$duration,$price){
+    //     $this->db->insert('Regime_User',array('id_User'=>$iduser,'id_Regime'=>$idregime,'objective_weight'=>$weight,'duration'=>$duration,'price'=>$price));
+    //     return $this->db->insert_id();
+    // }
+	
 
 }

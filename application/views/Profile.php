@@ -40,17 +40,23 @@
                         <img src="<?php echo base_url(); ?>assets/img/background.jpg" alt="..." />
                     </div>
                     <div class="content">
-                        <div class="author">
-                            <img class="avatar border-white" src="<?php echo base_url(); ?>assets/img/faces/face-2.jpg"
-                                alt="..." />
-                            <h4 class="title">
-                                <?php echo $user->user; ?><br />
-                                <a href="#"><small><?php echo $user->email; ?></small></a>
-                            </h4>
-                        </div>
-                        <p class="description text-center">
-                            "I like the way you work it <br> No diggity <br> I wanna bag it up"
+                        <p class="description text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi fugit quis possimus ex eum
+                            consectetur nemo. Eligendi, ab deserunt deleniti vel, nam fugiat at quam, quas reprehenderit
+                            culpa aliquid consequuntur!
                         </p>
+                        <center>
+                            <h6>
+                                Sold : <?php echo $user->sold; ?>
+                            </h6>
+                            <br>
+                            <div class="text-center">
+                                <a href="<?php echo base_url('CodeCI/index'); ?>">
+                                    <button type="button" class="btn btn-outline-secondary">add sold
+                                    </button>
+                                </a><br>
+                        </center>
+
                     </div>
                     <hr>
                     <div class="text-center">
@@ -72,7 +78,8 @@
 											?>
                                         <div class="text-center">
                                             <a href="<?php echo base_url('ActivityCI/index'); ?>">
-                                                <button type="button" class="btn btn-info btn-fill btn-wd">Show regime
+                                                <button type="button" class="btn btn-info btn-fill btn-wd">Show
+                                                    regime
                                                 </button>
                                             </a>
                                         </div>
@@ -81,7 +88,8 @@
                                             	?>
                                         <div class="text-center">
                                             <a href="<?php echo base_url('ActivityCI/index'); ?>">
-                                                <button type="button" class="btn btn-info btn-fill btn-wd">Add Regime
+                                                <button type="button" class="btn btn-info btn-fill btn-wd">Add
+                                                    Regime
                                                 </button>
                                             </a>
                                         </div>
@@ -110,14 +118,14 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Username</label>
-                                        <input type="text" class="form-control border-input" name="user"
+                                        <input type="text" class="form-control border-input" name="user" require
                                             value="<?php echo $user->user; ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control border-input" name="email"
+                                        <input type="email" class="form-control border-input" name="email" require
                                             value="<?php echo $user->email; ?>">
                                     </div>
                                 </div>
@@ -126,7 +134,7 @@
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <label>birthday</label>
-                                        <input type="date" class="form-control border-input" name="birthday"
+                                        <input type="date" class="form-control border-input" name="birthday" require
                                             value=" <?php echo $user->birthday; ?>">
                                     </div>
                                 </div>
@@ -136,7 +144,7 @@
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <label>weight</label>
-                                        <input type="number" class="form-control border-input" name="weight"
+                                        <input type="number" class="form-control border-input" name="weight" require
                                             value="<?php echo $user->weight; ?>">
                                     </div>
                                 </div>
@@ -145,7 +153,7 @@
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <label>size</label>
-                                        <input type="number" class="form-control border-input" name="size"
+                                        <input type="number" class="form-control border-input" name="size" require
                                             value="<?php echo $user->size; ?>">
                                     </div>
                                 </div>
@@ -154,7 +162,7 @@
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input type="text" class="form-control border-input" name="address"
+                                        <input type="text" class="form-control border-input" name="address" require
                                             value="<?php echo $user->address; ?>">
                                     </div>
                                 </div>
@@ -169,7 +177,7 @@
                             <div class="text-center">
                                 <button type="submit" class="btn btn-info btn-fill btn-wd">Update
                                     Profile</button>
-                            </div>
+                            </div><br>
                             <div class="clearfix"></div>
                         </form>
                     </div>

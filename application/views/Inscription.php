@@ -74,11 +74,11 @@
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Address</label>
-                                    <input type="number" name="address" class="form-control" max="50" require>
+                                    <input type="text" name="address" class="form-control" max-length="50" require>
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Contact</label>
-                                    <input type="number" name="contact" class="form-control" max="10" require>
+                                    <input type="number" name="contact" class="form-control" max-length="10" require>
                                 </div>
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label">Password</label>
@@ -89,6 +89,10 @@
                                         up</button>
                                 </div>
                             </form>
+                            <p class="mt-4 text-sm text-center">
+                                Have an account?
+                                <a href="<?php echo base_url('UserCI/index'); ?>">Sing in</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -96,40 +100,39 @@
         </div>
         <footer class="footer position-absolute bottom-2 py-2 w-100">
             <div class="container">
-                <div class="row align-items-center justify-content-lg-between">
-                    <div class="col-12 col-md-6 my-auto">
-                        <div class="copyright text-center text-sm text-white text-lg-start">
-                            ©
-                            <script>
-                            document.write(new Date().getFullYear())
-                            </script>, made with <i class="fa fa-heart" aria-hidden="true"></i> by
-                            <a href="https://www.creative-tim.com" class="font-weight-bold text-white"
-                                target="_blank">Mamison RAJAOHARISAONA</a> for a better web.
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com" class="nav-link text-white"
-                                    target="_blank">Mamison RAJAOHARISAONA</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/presentation" class="nav-link text-white"
-                                    target="_blank">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/blog" class="nav-link text-white"
-                                    target="_blank">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-white"
-                                    target="_blank">License</a>
-                            </li>
-                        </ul>
+                <div class="col-12 col-md-6 my-auto">
+                    <div class="copyright text-center text-sm text-white text-lg-start">
+                        ©
+                        <script>
+                        document.write(new Date().getFullYear())
+                        </script>, made with <i class="fa fa-heart" aria-hidden="true"></i> by
+                        <a href="https://www.creative-tim.com" class="font-weight-bold text-white"
+                            target="_blank">Mamison RAJAOHARISAONA</a> for a better web.
                     </div>
                 </div>
+                <div class="col-12 col-md-6">
+                    <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                        <li class="nav-item">
+                            <a href="https://www.creative-tim.com" class="nav-link text-white" target="_blank">Mamison
+                                RAJAOHARISAONA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.creative-tim.com/presentation" class="nav-link text-white"
+                                target="_blank">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.creative-tim.com/blog" class="nav-link text-white"
+                                target="_blank">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-white"
+                                target="_blank">License</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </footer>
+    </div>
+    </footer>
     </div>
     <!--   Core JS Files   -->
     <script src="<?php echo base_url(); ?>assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -140,27 +143,3 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
     <script src="<?php echo base_url(); ?>assets/js/material-kit.min.js?v=3.0.4" type="text/javascript"></script>
 </body>
-
-</html>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.css'); ?>">
-    <title>Inscription</title>
-</head>
-
-<body>
-    <form action="<?php echo base_url('UserCI/insert_User'); ?>" method="post">
-        <input type="text" name="user" id="" require>
-        <input type="date" name="birthday" id="" require>
-        <input type="email" name="email" id="" require>
-        <input type="password" name="key_password" id="" require>
-        <input type="submit" value="Inscription">
-    </form>
-</body>
-
-</html>

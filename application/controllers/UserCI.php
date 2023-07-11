@@ -7,9 +7,6 @@ class UserCI extends CI_Controller {
     {
         parent::__construct();
 		$this->load->model('User');
-		// if (!$this->session->has_userdata('user')) {
-		// 	redirect(base_url('UserCI/index'));
-		// }
     }
 
 
@@ -25,13 +22,16 @@ class UserCI extends CI_Controller {
 	{
 		$this->load->view('Inscription');
 	}
-	public function add()
-	{
-		$this->load->view('ajout');
+	public function add($id='')
+	{	$data['id'] = $id;
+		$this->load->view('ajout',$data);
 	}
 
 	public function profile()
 	{
+		if (!$this->session->has_userdata('user')) {
+			redirect(base_url('UserCI/index'));
+		}
 		$data['user'] = $this->session->userdata('user');
 		$data['is_Regime'] =$this->User->is_On_Regime($data['user']->id);
 		$this->load->view('templates/header');
@@ -57,7 +57,7 @@ class UserCI extends CI_Controller {
 			redirect('UserCI/profile');
 		}
 		else {
-			echo 'error';
+			redirect('UserCI/index');
 		}
 	}
 
@@ -103,7 +103,8 @@ class UserCI extends CI_Controller {
 	// add size and weight
 	public function update_data()
 	{
-		$id = $this->session->userdata('user')->id;
+		$id = $this->input->post('id');
+		var_dump($id);
 		$data = array(
 			'size' => $this->input->post('size'),
 			'weight' => $this->input->post('weight'),
@@ -155,7 +156,7 @@ class UserCI extends CI_Controller {
 		);
 		$inset_id =  $this->User->insert($data);
 		if ($inset_id) {
-			echo 'insert';
+			redirect('UserCI/add/'.$inset_id);
 		} else {
 			echo 'no insert';
 		}

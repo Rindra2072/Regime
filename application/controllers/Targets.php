@@ -20,7 +20,6 @@ class Targets extends CI_Controller {
         $user = $this->User->get_By_id($idu);
         $regime = $this->Target->getRegimeByIdTarget($idTarget);
         $poidsUser = $user->weight;
-		echo $poidsUser;
         $suggest = array();
 		$i=0;
             $suggest['id'] = $regime[$i]['id'];
@@ -41,17 +40,20 @@ class Targets extends CI_Controller {
         $data['suggest'] = $suggest ; 
         $data['activity'] = $activity;
         $data['poidsCible'] = $poidsCible;
+		$this->load->view('templates/header');
         $this->load->view('suggestion',$data);
+		$this->load->view('templates/footer');
     }
 
     public function acceptSuggest(){
         $data = array(
-			'id_User' => $this->session->userdata('user'),
+			'id_User' => $this->session->userdata('user')->id,
     		'id_Regime' => $this->input->get('idRegime'),
     		'objective_weight' => $this->input->get('cible'),
     		'duration' => $this->input->get('duration'),
 			'price' =>$this->input->get('price')
 		);
         $this->Target->insert_Regime_User($data);
+		redirect('UserCI/profile');
     }
 }
