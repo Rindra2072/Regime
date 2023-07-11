@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Activites extends CI_Model {
+class Activity extends CI_Model {
 
     public function __construct()
     {
@@ -9,7 +9,7 @@ class Activites extends CI_Model {
         $this->load->database();
     }
 
-    public function insert($data)
+    public function insertdata($data)
     {
         $this->db->insert('Activity', $data);
         return $this->db->insert_id();
@@ -20,21 +20,17 @@ class Activites extends CI_Model {
         return $query->result();
     }
     
-    public function update()
+    public function update($id,$data)
     {
-        $this->db->where('id', $id);
-        $this->db->update('Activity', $data);
-        return $this->db->affected_rows(); 
+        return $this->db->where('id_Activity',$id)->update('Activity', $data);   
     }
 
-    public function delete()
+    public function delete($id)
     {
-        $this->db->empty_table('Activity');
-        return $this->db->affected_rows();    
+        $this->db->where('id_Activity', $id)->delete('Activity');    
     }
 
-    public function get_All_Activities_Regime()
-    {
-        
-    }
+    public function getById($id) {
+      return $this->db->get_where('Activity', array('id_Activity' => $id))->row();
+   }
 }

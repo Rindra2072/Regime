@@ -6,34 +6,67 @@ class Activity_Controller extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-		$this->load->model('Activites');
+		$this->load->model('Activity');
     }
 
+    public function index()
+	{
+        $content['contents']="Act";
+		$this->load->view('back_office/template',$content);
+	} 
+    
+    public function get_Act()
+    {
+        $data['activities'] = $this->Activity->get_All_Activities();
+        $data['contents']="Act";
+        $this->load->view('back_office/template',$data);
+    }
+    
+    public function delete_Act()
+    {   
+        $id = $_GET['id'];
+        $this->Activity->delete($id);
+        redirect('Activity_Controller/get_Act');
+    }
+
+    public function insertView()
+    {
+       $content['contents']="Insert_Act";
+        $this->load->view('back_office/template',$content); 
+    }
     public function insert()
     {
         $data = array(
-            'id' => null,
-            'name_Activity' => $this->input->post('name_Activity');
-            'description' => $this->input->post('description');
-        ) 
-        $insert = $this->Activites->insert($data);
-        if ($insert) {
-            echo 'insert done';
+            'id_Activity' => null,
+            'name_Activity' => $this->input->post('name_Activity'),
+            'description' => $this->input->post('description'),
+        );
+        $inset_id = $this->Activity->insertdata($data);
+        if ($inset_id) {
+            redirect('Activity_Controller/get_Act');
         } else {
-            echo 'insert failed';
+            $this->load->view('back_office/template',$content);
         }
     }
-
+    
+    public function updateView()
+    {
+        $id = $_GET['id'];
+        $data['act']=  $this->Activity->getById($id);
+        $data['contents'] = "Update_Act";
+        $this->load->view('back_office/template',$data); 
+    }
     public function update()
     {
-        $id = $this->session->userdata('activite');
+        $id = $this->input->post('id');
         $data = array(
             'name_Activity' => $this->input->post('name_Activity'),
-            'description' => $this->input->post('description')
+            'description' => $this->input->post('description'),
         );
-        $affected_rows = $this->Activites->update($id, $data);
+        $affected_rows = $this->Activity->update($id, $data);
+        var_dump($affected_rows);
         if ($affected_rows) {
-            echo "Données mise à jour : " .$affected_rows;
+            redirect('Activity_Controller/get_Act');
         } else {
             echo "Aucune données mise à jour.";
         }
