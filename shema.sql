@@ -33,9 +33,16 @@ CREATE TABLE Regime(
 	description VARCHAR(255),
 	id_Objective INT REFERENCES Objective (id),
 	weight DOUBLE NOT  NULL,
-	price DOUBLE NOT  NULL
+	price DOUBLE NOT  NULL 
 );
 
+
+CREATE TABLE Aliment(
+	id INT  PRIMARY KEY AUTO_INCREMENT,
+	id_Regime int REFERENCES Regime(id),
+	id_picture int REFERENCES Picture (id),
+	description VARCHAR(255)
+);
 
 
 
@@ -92,7 +99,7 @@ create Table User(
     email VARCHAR(50) NOT NULL,
     key_password VARCHAR(50) NOT NULL,
     user_status int NOT NULL,
-	sold DOUBLE
+	sold DOUBLE DEFAULT 0
 );
 
 CREATE TABLE Historical(
