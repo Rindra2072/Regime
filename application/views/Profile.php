@@ -26,8 +26,7 @@
     <link href="<?php echo base_url(); ?>assets/css/demo.css" rel="stylesheet" />
 
     <!--  Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+
     <link href="<?php echo base_url(); ?>assets/css/themify-icons.css" rel="stylesheet">
 
 </head>
@@ -48,6 +47,11 @@
                         <center>
                             <h6>
                                 Sold : <?php echo $user->sold; ?>
+                            </h6>
+                            <br>
+                            <h6>
+                                Mon IMC : <?php echo $IMC; ?><br>
+                                Remarque : <?php echo $desc_imc; ?>
                             </h6>
                             <br>
                             <div class="text-center">
@@ -77,7 +81,7 @@
                                         <?php if ($is_Regime) {
 											?>
                                         <div class="text-center">
-                                            <a href="<?php echo base_url('ActivityCI/index'); ?>">
+                                            <a href="<?php echo base_url('Targets/showRegime'); ?>">
                                                 <button type="button" class="btn btn-info btn-fill btn-wd">Show
                                                     regime
                                                 </button>
@@ -193,30 +197,13 @@
 <footer class="footer">
     <div class="container-fluid">
         <nav class="pull-left">
-            <ul>
 
-                <li>
-                    <a href="http://www.creative-tim.com">
-                        Creative Tim
-                    </a>
-                </li>
-                <li>
-                    <a href="http://blog.creative-tim.com">
-                        Blog
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.creative-tim.com/license">
-                        Licenses
-                    </a>
-                </li>
-            </ul>
         </nav>
         <div class="copyright pull-right">
             &copy;
             <script>
             document.write(new Date().getFullYear())
-            </script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative
+            </script>, made with <i class="fa fa-heart heart"></i> by <a href="#">Creative
                 Tim</a>
         </div>
     </div>
@@ -242,7 +229,6 @@
 <script src="<?php echo base_url(); ?>assets/js/bootstrap-notify.js"></script>
 
 <!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
 <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
 <script src="<?php echo base_url(); ?>assets/js/paper-dashboard.js"></script>

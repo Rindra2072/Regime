@@ -82,5 +82,16 @@ class User extends CI_Model {
             return null;
         }
     }
+	    public function getIMC($idu){
+        $query = $this->db->get_where('User',array('id'=>$idu));
+        $res  = $query->row();
+        $taille = ($res->size)/10;
+        $poids = $res->weight;
+        $imc = $poids /($taille*$taille);
+        $imc = round($imc,2);
+
+        return $imc;
+
+    }
 
 }

@@ -34,6 +34,19 @@ class Target extends CI_Model {
     //     $this->db->insert('Regime_User',array('id_User'=>$iduser,'id_Regime'=>$idregime,'objective_weight'=>$weight,'duration'=>$duration,'price'=>$price));
     //     return $this->db->insert_id();
     // }
-	
+	    public function getDetailRegime($idregime){
+        $query = $this->db->get_where('Detail_Regime',array('id_Regime'=>$idregime));
+        return $query->row();
+    }
+
+    public function showRegimeByUser($iduser){
+        $query = $this->db->get_where('Regime_User',array('id_User'=>$iduser));
+        return $query->row();
+    }
+
+    public function getRegimeByIdRegime($id){
+        $query = $this->db->get_where('Regime',array('id'=>$id));
+        return $query->row();
+    }
 
 }

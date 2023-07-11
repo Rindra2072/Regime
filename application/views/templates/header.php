@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="en" itemscope itemtype="">
 
 <head>
     <meta charset="utf-8" />
@@ -12,6 +12,20 @@
     <link href="<?php echo base_url('assets/css/nucleo-icons.css')?>" rel="stylesheet" />
     <link href="<?php echo base_url('assets/css/nucleo-svg.css');?>" rel="stylesheet" />
     <link id="pagestyle" href="<?php echo base_url('assets/css/material-kit.css?v=3.0.4');?>" rel="stylesheet" />
+    <!-- Bootstrap core CSS     -->
+    <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="<?php echo base_url(); ?>assets/css/animate.min.css" rel="stylesheet" />
+
+    <!--  Paper Dashboard core CSS    -->
+    <link href="<?php echo base_url(); ?>assets/css/paper-dashboard.css" rel="stylesheet" />
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="<?php echo base_url(); ?>assets/css/demo.css" rel="stylesheet" />
+
+    <!--  Fonts and icons     -->
+    <link href="<?php echo base_url(); ?>assets/css/themify-icons.css" rel="stylesheet">
 </head>
 
 <body class="index-page bg-gray-200">
@@ -24,8 +38,7 @@
                 <nav
                     class="navbar navbar-expand-lg  blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
                     <div class="container-fluid px-0">
-                        <a class="navbar-brand font-weight-bolder ms-sm-3"
-                            href="https://demos.creative-tim.com/material-kit/index" rel="tooltip"
+                        <a class="navbar-brand font-weight-bolder ms-sm-3" href="#" rel="tooltip"
                             title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
                             Food
                         </a>
@@ -425,8 +438,7 @@
                                         <div class="d-none d-lg-block">
                                             <ul class="list-group">
                                                 <li class="nav-item list-group-item border-0 p-0">
-                                                    <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                        href=" https://www.creative-tim.com/learning-lab/bootstrap/overview/material-kit ">
+                                                    <a class="dropdown-item py-2 ps-3 border-radius-md" href=" #">
                                                         <h6
                                                             class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
                                                             Getting Started</h6>
@@ -435,8 +447,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item list-group-item border-0 p-0">
-                                                    <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                        href=" https://www.creative-tim.com/learning-lab/bootstrap/colors/material-kit ">
+                                                    <a class="dropdown-item py-2 ps-3 border-radius-md" href="">
                                                         <h6
                                                             class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
                                                             Foundation</h6>
@@ -445,8 +456,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item list-group-item border-0 p-0">
-                                                    <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                        href=" https://www.creative-tim.com/learning-lab/bootstrap/alerts/material-kit ">
+                                                    <a class="dropdown-item py-2 ps-3 border-radius-md" href="# ">
                                                         <h6
                                                             class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
                                                             Components</h6>
@@ -455,8 +465,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item list-group-item border-0 p-0">
-                                                    <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                        href=" https://www.creative-tim.com/learning-lab/bootstrap/datepicker/material-kit ">
+                                                    <a class="dropdown-item py-2 ps-3 border-radius-md" href=" # ">
                                                         <h6
                                                             class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
                                                             Plugins</h6>
@@ -465,8 +474,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item list-group-item border-0 p-0">
-                                                    <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                        href=" https://www.creative-tim.com/learning-lab/bootstrap/utilities/material-kit ">
+                                                    <a class="dropdown-item py-2 ps-3 border-radius-md" href=" #">
                                                         <h6
                                                             class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
                                                             Utility Classes</h6>
