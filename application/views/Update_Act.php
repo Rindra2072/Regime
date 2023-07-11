@@ -4,7 +4,7 @@
             </div>
         <div class="col-md-5">
         <div>
-            <form action="<?php echo base_url('Activity_Controller/update'); ?>" method="post">
+            <form action="<?php echo base_url('ActivityCI/update'); ?>" method="post">
                 <div class="input-group input-group-outline my-3">
                     <label class="form-label">Name Activity</label>
                     <input type="text" name="name_Activity" value="<?php echo $act->name_Activity;?>" class="form-control"require>

@@ -49,13 +49,18 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="<?php echo base_url('Activity_Controller/get_Act'); ?>">
+                    <a href="<?php echo base_url('ActivityCI/get_Act'); ?>">
                         <p>Activity</p>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="<?php echo base_url('Regime_Controller/get_Reg'); ?>">
+                    <a href="<?php echo base_url('RegimeCI/get_Reg'); ?>">
                         <p>Regime</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="<?php echo base_url('CodeCI/index'); ?>">
+                        <p>Code</p>
                     </a>
                 </li>
             </ul>
@@ -65,46 +70,15 @@
     <div class="main-panel">
 		<nav class="navbar navbar-default">
             <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar bar1"></span>
-                        <span class="icon-bar bar2"></span>
-                        <span class="icon-bar bar3"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Activities</a>
-                </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="ti-panel"></i>
-								<p>Stats</p>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="ti-bell"></i>
-                                    <p class="notification">5</p>
-									<p>Notifications</p>
-									<b class="caret"></b>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
-                              </ul>
-                        </li>
 						<li>
                             <a href="#">
 								<i class="ti-settings"></i>
-								<p>Settings</p>
+								<p>Log out</p>
                             </a>
                         </li>
                     </ul>
-
                 </div>
             </div>
         </nav>

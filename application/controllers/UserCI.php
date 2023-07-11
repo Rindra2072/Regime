@@ -9,13 +9,11 @@ class UserCI extends CI_Controller {
 		$this->load->model('User');
     }
 
-
 	// form login
 	public function index()
 	{
 		$this->load->view('Login');
 	}
-
 
 	// form Inscription
 	public function inscription()
@@ -44,7 +42,6 @@ class UserCI extends CI_Controller {
 		}
 	}
 
-
 	// Admin
 	public function login_Admin()
 	{
@@ -59,7 +56,6 @@ class UserCI extends CI_Controller {
 			echo 'error';
 		}
 	}
-
 
 	// insert Admin
 	public function insert_Admin()

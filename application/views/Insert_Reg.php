@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-5">
-    <form action="<?php echo base_url('Regime_Controller/insert'); ?>" method="post">
+    <form action="<?php echo base_url('RegimeCI/insert'); ?>" method="post">
         <div class="input-group input-group-outline my-3">
             <label class="form-label">Regime</label>
             <input type="text" name="regime" class="form-control">

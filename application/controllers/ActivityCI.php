@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Activity_Controller extends CI_Controller {
+class ActivityCI extends CI_Controller {
 
 	public function __construct()
     {
@@ -26,7 +26,7 @@ class Activity_Controller extends CI_Controller {
     {   
         $id = $_GET['id'];
         $this->Activity->delete($id);
-        redirect('Activity_Controller/get_Act');
+        redirect('ActivityCI/get_Act');
     }
 
     public function insertView()
@@ -43,7 +43,7 @@ class Activity_Controller extends CI_Controller {
         );
         $inset_id = $this->Activity->insertdata($data);
         if ($inset_id) {
-            redirect('Activity_Controller/get_Act');
+            redirect('ActivityCI/get_Act');
         } else {
             $this->load->view('back_office/template',$content);
         }
@@ -66,7 +66,7 @@ class Activity_Controller extends CI_Controller {
         $affected_rows = $this->Activity->update($id, $data);
         var_dump($affected_rows);
         if ($affected_rows) {
-            redirect('Activity_Controller/get_Act');
+            redirect('ActivityCI/get_Act');
         } else {
             echo "Aucune données mise à jour.";
         }

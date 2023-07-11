@@ -25,8 +25,8 @@
                                     <td><?php echo $regimes[$i]->id_Objective?></td>
                                     <td><?php echo $regimes[$i]->weight?></td>
                                     <td><?php echo $regimes[$i]->price?></td>
-                                    <td><a href="<?php echo base_url('Regime_Controller/delete_Reg')?>?id=<?php echo $regimes[$i]->id ?>">Supprimer</a></td>
-                                    <td><a href="<?php echo base_url('Regime_Controller/updateView')?>?id=<?php echo $regimes[$i]->id ?>"> Modifier</a></td>
+                                    <td><a href="<?php echo base_url('RegimeCI/delete_Reg')?>?id=<?php echo $regimes[$i]->id ?>">Supprimer</a></td>
+                                    <td><a href="<?php echo base_url('RegimeCI/updateView')?>?id=<?php echo $regimes[$i]->id ?>"> Modifier</a></td>
                                 </tr>
                                 <?php }?>
                             </tbody>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <nav class="pull-left">
-                    <a href="<?php echo base_url('Regime_Controller/insertView')?>">Ajouter une regime</a>
+                    <a href="<?php echo base_url('RegimeCI/insertView')?>">Ajouter une regime</a>
                 </nav>
             </div>
         </div>

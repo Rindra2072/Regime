@@ -17,8 +17,8 @@
                                 <tr>
                                     <td><?php echo $activities[$i]->name_Activity?></td>
                                     <td><?php echo $activities[$i]->description?></td>
-                                    <td><a href="<?php echo base_url('Activity_Controller/delete_Act')?>?id=<?php echo $activities[$i]->id_Activity ?>">Supprimer</a></td>
-                                    <td><a href="<?php echo base_url('Activity_Controller/updateView')?>?id=<?php echo $activities[$i]->id_Activity ?>"> Modifier</a></td>
+                                    <td><a href="<?php echo base_url('ActivityCI/delete_Act')?>?id=<?php echo $activities[$i]->id_Activity ?>">Supprimer</a></td>
+                                    <td><a href="<?php echo base_url('ActivityCI/updateView')?>?id=<?php echo $activities[$i]->id_Activity ?>"> Modifier</a></td>
                                 </tr>
                                 <?php }?>
                             </tbody>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <nav class="pull-left">
-                    <a href="<?php echo base_url('Activity_Controller/insertView')?>">Ajouter une activité</a>
+                    <a href="<?php echo base_url('ActivityCI/insertView')?>">Ajouter une activité</a>
                 </nav>
             </div>
         </div>
