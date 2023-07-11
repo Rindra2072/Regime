@@ -4,33 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png');?>">
     <link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.png');?>">
-
     <title>
-
         Material Kit 2 by Creative Tim
-
     </title>
-
-
-
-
-    <!-- Nucleo Icons -->
     <link href="<?php echo base_url('assets/css/nucleo-icons.css')?>" rel="stylesheet" />
     <link href="<?php echo base_url('assets/css/nucleo-svg.css');?>" rel="stylesheet" />
-
-
-
-
     <link id="pagestyle" href="<?php echo base_url('assets/css/material-kit.css?v=3.0.4');?>" rel="stylesheet" />
-
-
-
-
-
-
 </head>
 
 <body class="index-page bg-gray-200">
@@ -46,7 +27,7 @@
                         <a class="navbar-brand font-weight-bolder ms-sm-3"
                             href="https://demos.creative-tim.com/material-kit/index" rel="tooltip"
                             title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
-                            Material Kit 2
+                            Food
                         </a>
                         <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
@@ -87,35 +68,14 @@
                                                 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
                                                 Account
                                             </h6>
-                                            <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
-                                                <span>Sign In</span>
+                                            <a href="<?php echo base_url('UserCI/profile');?>"
+                                                class="dropdown-item border-radius-md">
+                                                <span>My Profile</span>
                                             </a>
-                                        </div>
-
-                                        <div class="d-lg-none">
-                                            <h6
-                                                class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
-                                                Landing Pages
-                                            </h6>
-
-                                            <a href="./pages/about-us.html" class="dropdown-item border-radius-md">
-                                                <span>About Us</span>
+                                            <a href="<?php echo base_url('UserCI/logout');?>"
+                                                class="dropdown-item border-radius-md">
+                                                <span>Logout</span>
                                             </a>
-                                            <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
-                                                <span>Contact Us</span>
-                                            </a>
-                                            <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                                                <span>Author</span>
-                                            </a>
-
-                                            <h6
-                                                class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
-                                                Account
-                                            </h6>
-                                            <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
-                                                <span>Sign In</span>
-                                            </a>
-
                                         </div>
 
                                     </div>
@@ -201,8 +161,8 @@
                                                                 Input Areas</h6>
                                                             <span class="text-sm">See all input areas</span>
                                                         </div>
-                                                        <img src="./assets/img/down-arrow.svg" alt="down-arrow"
-                                                            class="arrow">
+                                                        <img src="<?php echo base_url(); ?>assets/img/down-arrow.svg"
+                                                            alt="down-arrow" class="arrow">
                                                     </div>
                                                 </a>
                                                 <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
@@ -228,8 +188,8 @@
                                                                 Attention Catchers</h6>
                                                             <span class="text-sm">See all examples</span>
                                                         </div>
-                                                        <img src="./assets/img/down-arrow.svg" alt="down-arrow"
-                                                            class="arrow">
+                                                        <img src="<?php echo base_url(); ?>assets/img/down-arrow.svg"
+                                                            alt="down-arrow" class="arrow">
                                                     </div>
                                                 </a>
                                                 <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
@@ -259,9 +219,8 @@
                                                                 Elements</h6>
                                                             <span class="text-sm">See all elements</span>
                                                         </div>
-
-                                                        <img src="./assets/img/down-arrow.svg" alt="down-arrow"
-                                                            class="arrow">
+                                                        <img src="<?php echo base_url(); ?>assets/img/down-arrow.svg"
+                                                            alt="down-arrow" class="arrow">
                                                     </div>
                                                 </a>
                                                 <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
@@ -458,8 +417,8 @@
                                         id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="material-icons opacity-6 me-2 text-md">article</i>
                                         Docs
-                                        <img src="./assets/img/down-arrow-dark.svg" alt="down-arrow"
-                                            class="arrow ms-auto ms-md-2">
+                                        <img src="<?php echo base_url(); ?>assets/img/down-arrow-dark.svg"
+                                            alt="down-arrow" class="arrow ms-auto ms-md-2">
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive mt-0 mt-lg-3 p-3 border-radius-lg"
                                         aria-labelledby="dropdownMenuDocs">
@@ -568,12 +527,6 @@
                                     </ul>
                                 </li>
 
-                                <li class="nav-item my-auto ms-3 ms-lg-0">
-
-                                    <a href="https://www.creative-tim.com/product/material-kit-pro"
-                                        class="btn btn-sm  bg-gradient-primary  mb-0 me-1 mt-2 mt-md-0">Connexion</a>
-
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -584,7 +537,8 @@
     </div>
 
     <header class="header-2">
-        <div class="page-header min-vh-75 relative" style="background-image: url('./assets/img/bg2.jpg')">
+        <div class="page-header min-vh-75 relative"
+            style="background-image: url('<?php echo base_url(); ?>assets/img/bg2.jpg')">
             <span class="mask bg-gradient-primary opacity-4"></span>
             <div class="container">
                 <div class="row">

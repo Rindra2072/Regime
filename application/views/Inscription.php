@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form role="form" class="text-start" action="<?php echo base_url('UserCI/login_User'); ?>"
+                            <form role="form" class="text-start" action="<?php echo base_url('UserCI/insert_User'); ?>"
                                 method="post">
                                 <div class="input-group input-group-outline my-3">
                                     <label class="form-label">User</label>

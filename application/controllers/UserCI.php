@@ -7,6 +7,9 @@ class UserCI extends CI_Controller {
     {
         parent::__construct();
 		$this->load->model('User');
+		// if (!$this->session->has_userdata('user')) {
+		// 	redirect(base_url('UserCI/index'));
+		// }
     }
 
 
@@ -22,7 +25,20 @@ class UserCI extends CI_Controller {
 	{
 		$this->load->view('Inscription');
 	}
+	public function add()
+	{
+		$this->load->view('ajout');
+	}
 
+	public function profile()
+	{
+		$data['user'] = $this->session->userdata('user');
+		$data['is_Regime'] =$this->User->is_On_Regime($data['user']->id);
+		$this->load->view('templates/header');
+		$this->load->view('Profile',$data);
+		$this->load->view('templates/footer');
+	}
+	
 	public function logout()
 	{
 		$this->session->sess_destroy();
@@ -35,9 +51,10 @@ class UserCI extends CI_Controller {
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 		$res = $this->User->login_User($email,$password);
+		echo $password;
 		if ($res) {
 			$this->session->set_userData('user',$res);
-			var_dump($res);
+			redirect('UserCI/profile');
 		}
 		else {
 			echo 'error';
@@ -53,7 +70,7 @@ class UserCI extends CI_Controller {
 		$res = $this->User->login_Admin($email,$password);
 		if (!empty($res)) {
 			$this->session->set_userData('user',$res);
-			var_dump($res);
+			redirect();
 		}
 		else {
 			echo 'error';
@@ -73,7 +90,7 @@ class UserCI extends CI_Controller {
 			'contact' =>$this->input->post('contact'),
 			'address' =>$this->input->post('address'),
     		'key_password' => $this->input->post('key_password'),
-    		'user_status' => 1
+    		'user_status' => 11
 		);
 		$inset_id =  $this->User->insert($data);
 		if ($inset_id) {
@@ -83,7 +100,45 @@ class UserCI extends CI_Controller {
 		}
 	}
 
+	// add size and weight
+	public function update_data()
+	{
+		$id = $this->session->userdata('user')->id;
+		$data = array(
+			'size' => $this->input->post('size'),
+			'weight' => $this->input->post('weight'),
+    	);
+		$affected_rows = $this->User->update_data($id, $data);
+		if ($affected_rows) {
+			redirect('UserCI/profile');
+		} else {
+			echo "Aucune donnée mise à jour.";
+		}
+	}
 
+
+	// add size and weight
+	public function update_All_data()
+	{
+		$id = $this->session->userdata('user')->id;
+		$data = array(
+			'user' => $this->input->post('user'),
+    		'birthday' => $this->input->post('birthday'),
+    		'email' => $this->input->post('email'),
+			'gender' =>$this->input->post('gender'),
+			'contact' =>$this->input->post('contact'),
+			'address' =>$this->input->post('address'),
+			'size' => $this->input->post('size'),
+			'weight' => $this->input->post('weight'),
+    	);
+		$affected_rows = $this->User->update_data($id, $data);
+		if ($affected_rows) {
+			redirect('UserCI/profile');
+		} else {
+			echo "Aucune donnée mise à jour.";
+		}
+	}
+	
 	// insert User
 	public function insert_User()
 	{
@@ -92,8 +147,11 @@ class UserCI extends CI_Controller {
     		'user' => $this->input->post('user'),
     		'birthday' => $this->input->post('birthday'),
     		'email' => $this->input->post('email'),
+			'gender' =>$this->input->post('gender'),
+			'contact' =>$this->input->post('contact'),
+			'address' =>$this->input->post('address'),
     		'key_password' => $this->input->post('key_password'),
-    		'user_status' => 11
+    		'user_status' => 1
 		);
 		$inset_id =  $this->User->insert($data);
 		if ($inset_id) {
