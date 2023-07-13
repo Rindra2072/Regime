@@ -40,9 +40,7 @@
                     </div>
                     <div class="content">
                         <p class="description text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi fugit quis possimus ex eum
-                            consectetur nemo. Eligendi, ab deserunt deleniti vel, nam fugiat at quam, quas reprehenderit
-                            culpa aliquid consequuntur!
+
                         </p>
                         <center>
                             <h6>

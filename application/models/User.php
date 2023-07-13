@@ -10,12 +10,16 @@ class User extends CI_Model {
     }
 
 
+
     // find all confirmed user
     public function get_All_User(){
         $query = $this->db->get('User');
         return $query->result();
     }
-
+  public function get_All_User_not_confirmed(){
+        $query = $this->db->get('User_not_confirmed');
+        return $query->result();
+    }
 	// is on Regime
 	public function is_On_Regime($user){
         $query = $this->db->get_where('Regime_User',array('id_User'=>$user));
@@ -40,7 +44,7 @@ class User extends CI_Model {
     // login Admin
     public function login_Admin($email,$password){
         $query = $this->db->get_where('User',array('email'=>$email,'key_password'=>$password,'user_status'=>11));
-        if ($query->num_row() > 0) {
+        if ($query->num_rows() > 0) {
             return $query->row();
         } else {
             return null;

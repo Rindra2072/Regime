@@ -15,7 +15,10 @@ class UserCI extends CI_Controller {
 	{
 		$this->load->view('Login');
 	}
-
+	public function admin()
+	{
+		$this->load->view('login_admin');
+	}
 
 	// form Inscription
 	public function inscription()
@@ -74,12 +77,13 @@ class UserCI extends CI_Controller {
 	// Admin
 	public function login_Admin()
 	{
+	
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 		$res = $this->User->login_Admin($email,$password);
 		if (!empty($res)) {
 			$this->session->set_userData('user',$res);
-			redirect();
+			redirect('ActivityCI/get_Act');
 		}
 		else {
 			echo 'error';

@@ -14,6 +14,9 @@ CREATE TABLE Objective(
 	description VARCHAR(255)
 );
 
+insert into Objective(objective) VALUES ("Augmenter");
+insert into Objective(objective) VALUES ("diminuer");
+
 
 CREATE TABLE Activity(
 	id_Activity INT PRIMARY KEY AUTO_INCREMENT,
@@ -52,7 +55,7 @@ CREATE TABLE Regime_Activity(
 	id_Activity int REFERENCES Activity (id)
 );
 
-INSERT INTO Regime (regime,id_Objective,weight,price) VALUES ('regime proteine',1,5,1,10000);
+INSERT INTO Regime (regime,id_Objective,weight,price) VALUES ('regime proteine',1,5,10000);
 INSERT INTO Regime (regime,id_Objective,weight,price) VALUES ('regime mampitombo',1,3,1,8000);
 
 INSERT INTO Regime_Activity (id_Regime,id_Activity) VALUES (1,1);
@@ -60,6 +63,9 @@ INSERT INTO Regime_Activity (id_Regime,id_Activity) VALUES (1,2);
 INSERT INTO Regime_Activity (id_Regime,id_Activity) VALUES (2,2);
 INSERT INTO Regime_Activity (id_Regime,id_Activity) VALUES (1,3);
 
+
+INSERT INTO Regime_Activity (id_Regime,id_Activity) VALUES (3,1);
+INSERT INTO Regime_Activity (id_Regime,id_Activity) VALUES (5,2);
 
 
 CREATE TABLE Regime_User(
@@ -111,5 +117,50 @@ CREATE TABLE Historical(
 );
 
 
+create table Detail_Regime(
+	id_Regime int REFERENCES Regime(id),
+	viande double ,
+	poisson double ,
+	volaille double
+);
+
+
+INSERT into Detail_Regime (id_Regime,viande,poisson,volaille) values (1,60,70,40);
+INSERT into Detail_Regime (id_Regime,viande,poisson,volaille) values (2,30,60,40);
+
+INSERT into Detail_Regime (id_Regime,viande,poisson,volaille) values (3,0,0,0);
+INSERT into Detail_Regime (id_Regime,viande,poisson,volaille) values (5,0,0,0);
+INSERT into Detail_Regime (id_Regime,viande,poisson,volaille) values (4,10,70,40);
+INSERT into Detail_Regime (id_Regime,viande,poisson,volaille) values (6,30,60,20);
 
 INSERT INTO User VALUES( null ,'tes',now(),'h@gmail.com','123',1);
+
+INSERT INTO User (user,birthday,gender,address,contact,email,key_password,user_status) VALUES('admin',now(),1,'malaza','1234','admin@gmail.com','admin',11);
+
+create table Code(
+	code VARCHAR(4) PRIMARY key,
+	price double,
+	status int 
+);
+
+create table Validation_Code(
+	code int REFERENCES Code(code),
+	id_User int REFERENCES User(id)
+);
+
+
+INSERT into Code (code,price,status) values ('2072',50000,1);
+INSERT into Code (code,price,status) values ('1234',70000,1);
+INSERT into Code (code,price,status) values ('1931',20000,1);
+INSERT into Code (code,price,status) values ('2003',40000,1);
+INSERT into Code (code,price,status) values ('2010',15000,1);
+INSERT into Code (code,price,status) values ('3045',80000,1);
+INSERT into Code (code,price,status) values ('4578',100000,1);
+INSERT into Code (code,price,status) values ('6142',35000,1);
+INSERT into Code (code,price,status) values ('6521',60000,1);
+INSERT into Code (code,price,status) values ('1111',5000,1);
+INSERT into Code (code,price,status) values ('2222',7000,1);
+INSERT into Code (code,price,status) values ('3333',12000,1);
+INSERT into Code (code,price,status) values ('4444',3000,1);
+INSERT into Code (code,price,status) values ('5555',9000,1);
+INSERT into Code (code,price,status) values ('6666',16000,1);

@@ -10,9 +10,9 @@
                         <table class="table table-hover">
                             <thead>
                                 <th>Regime</th>
-                                <th>Picture</th>
+
                                 <th>Description</th>
-                                <th>Objective</th>
+
                                 <th>Weight</th>
                                 <th>Price</th>
                             </thead>
@@ -20,13 +20,17 @@
                                 <?php for($i=0;$i<count($regimes);$i++) {?>
                                 <tr>
                                     <td><?php echo $regimes[$i]->regime?></td>
-                                    <td><?php echo $regimes[$i]->id_picture?></td>
+
                                     <td><?php echo $regimes[$i]->description?></td>
-                                    <td><?php echo $regimes[$i]->id_Objective?></td>
+
                                     <td><?php echo $regimes[$i]->weight?></td>
                                     <td><?php echo $regimes[$i]->price?></td>
-                                    <td><a href="<?php echo base_url('RegimeCI/delete_Reg')?>?id=<?php echo $regimes[$i]->id ?>">Supprimer</a></td>
-                                    <td><a href="<?php echo base_url('RegimeCI/updateView')?>?id=<?php echo $regimes[$i]->id ?>"> Modifier</a></td>
+                                    <td><a
+                                            href="<?php echo base_url('RegimeCI/delete_Reg')?>?id=<?php echo $regimes[$i]->id ?>">Supprimer</a>
+                                    </td>
+                                    <td><a
+                                            href="<?php echo base_url('RegimeCI/updateView')?>?id=<?php echo $regimes[$i]->id ?>">
+                                            Modifier</a></td>
                                 </tr>
                                 <?php }?>
                             </tbody>

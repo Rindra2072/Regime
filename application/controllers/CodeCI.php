@@ -42,7 +42,11 @@ class CodeCI extends CI_Controller {
 
     public function validation(){
         $data['validation'] =$this->Code->getValidation();
-        $this->load->view('admin/list_validation',$data);
+		
+		 $data['contents']="admin/list_validation";
+		$this->load->view('back_office/template',$data);
+		
+
     }
 
     public function valider(){
@@ -53,6 +57,8 @@ class CodeCI extends CI_Controller {
         $prix =$this->Code->getPrice($code);
         $this->Code->setSoldeUser($iduser,($solde+$prix));
         $this->Code->setStatus($code);
+
+		redirect('ActivityCI/get_Act');
     }
 
 }

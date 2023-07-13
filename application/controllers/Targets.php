@@ -59,9 +59,13 @@ class Targets extends CI_Controller {
 	public function showRegime(){
         $idu= $this->session->userdata('user')->id;
 
-        $data['regime'] = $this->Target->showRegimeByUser($idu);
-        $data['name_regime'] = $this->Target->getRegimeByIdRegime($data['regime']->id_Regime);
-        $idactivity =  $this->Target->getActivityByIdRegime($data['regime']->id_Regime);
+
+		$data['regime'] = $this->Target->showRegimeByUser($idu);
+	
+
+		$data['name_regime'] = $this->Target->getRegimeByIdRegime($data['regime']->id_Regime);
+
+		$idactivity =  $this->Target->getActivityByIdRegime($data['regime']->id_Regime);
         for($j=0;$j<count($idactivity);$j++){
             $activity = $this->Target->getActivityById($idactivity[$j]['id_Activity']);
         }
