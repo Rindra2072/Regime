@@ -9,14 +9,9 @@
     <title>
         Food assistant
     </title>
-    <link rel="stylesheet" type="text/css"
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <link href="<?php echo base_url(); ?>assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="<?php echo base_url(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link id="pagestyle" href="<?php echo base_url(); ?>assets/css/material-kit.css?v=3.0.4" rel="stylesheet" />
-    <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 </head>
 
 <body class="sign-in-basic">
@@ -106,27 +101,24 @@
                         <script>
                         document.write(new Date().getFullYear())
                         </script>, made with <i class="fa fa-heart" aria-hidden="true"></i> by
-                        <a href="https://www.creative-tim.com" class="font-weight-bold text-white"
-                            target="_blank">Mamison RAJAOHARISAONA</a> for a better web.
+                        <a href="#" class="font-weight-bold text-white" target="_blank">Mamison RAJAOHARISAONA</a> for a
+                        better web.
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                         <li class="nav-item">
-                            <a href="https://www.creative-tim.com" class="nav-link text-white" target="_blank">Mamison
+                            <a href="#" class="nav-link text-white" target="_blank">Mamison
                                 RAJAOHARISAONA</a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://www.creative-tim.com/presentation" class="nav-link text-white"
-                                target="_blank">About Us</a>
+                            <a href="#" class="nav-link text-white" target="_blank">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://www.creative-tim.com/blog" class="nav-link text-white"
-                                target="_blank">Blog</a>
+                            <a href="#" class="nav-link text-white" target="_blank">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-white"
-                                target="_blank">License</a>
+                            <a href="#" class="nav-link pe-0 text-white" target="_blank">License</a>
                         </li>
                     </ul>
                 </div>
@@ -140,6 +132,5 @@
     <script src="<?php echo base_url(); ?>assets/js/plugins/perfect-scrollbar.min.js"></script>
     <!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
     <!--  Google Maps Plugin    -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
     <script src="<?php echo base_url(); ?>assets/js/material-kit.min.js?v=3.0.4" type="text/javascript"></script>
 </body>

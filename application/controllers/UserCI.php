@@ -15,7 +15,10 @@ class UserCI extends CI_Controller {
 	{
 		$this->load->view('Login');
 	}
-
+	public function admin()
+	{
+		$this->load->view('login_admin');
+	}
 
 	// form Inscription
 	public function inscription()
@@ -34,6 +37,15 @@ class UserCI extends CI_Controller {
 		}
 		$data['user'] = $this->session->userdata('user');
 		$data['is_Regime'] =$this->User->is_On_Regime($data['user']->id);
+		$data['IMC'] = $this->User->getIMC($data['user']->id);
+		if($data['IMC']<0.18){
+			$data['desc_imc']=  "vous etes maigre";
+		}
+		elseif ($data['IMC']>=0.18 && $data['IMC']<=0.25) {
+				$data['desc_imc']=  "vous etes normal";
+		}else{
+				$data['desc_imc']=  "vous etes obese";
+		}
 		$this->load->view('templates/header');
 		$this->load->view('Profile',$data);
 		$this->load->view('templates/footer');
@@ -65,12 +77,13 @@ class UserCI extends CI_Controller {
 	// Admin
 	public function login_Admin()
 	{
+	
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 		$res = $this->User->login_Admin($email,$password);
 		if (!empty($res)) {
 			$this->session->set_userData('user',$res);
-			redirect();
+			redirect('ActivityCI/get_Act');
 		}
 		else {
 			echo 'error';
